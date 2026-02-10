@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Unfiled
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Privacy-first PDF toolkit.** Merge, split, compress, and organize PDFs entirely in your browser. No uploads, no servers, no tracking.
 
-Currently, two official plugins are available:
+## Why?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Adobe Acrobat charges $20-30/month for basic operations like merging two PDFs. Free alternatives like Smallpdf limit you to 2 tasks per day and upload your files to their servers. Unfiled runs 100% client-side — your files never leave your device.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Merge PDFs** — Combine multiple PDFs into one document
+- **Split / Extract Pages** — Select pages visually with thumbnails and extract them
+- **Compress PDFs** — Reduce file size by removing unused objects
+- **Rotate Pages** — Rotate all pages 90, 180, or 270 degrees
+- **Images to PDF** — Convert JPG/PNG images into a PDF document
 
-## Expanding the ESLint configuration
+All processing happens in your browser using WebAssembly and JavaScript. Zero server-side processing.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React + TypeScript + Vite
+- [pdf-lib](https://pdf-lib.js.org/) — PDF manipulation (merge, split, rotate, forms)
+- [pdf.js](https://mozilla.github.io/pdf.js/) — PDF rendering and thumbnails
+- Tailwind CSS v4
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/tjamjam/unfiled.git
+cd unfiled
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open http://localhost:5173 in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Building
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The output is a static site in `dist/` that can be deployed to any static host (GitHub Pages, Netlify, Vercel, etc.).
+
+## License
+
+MIT
