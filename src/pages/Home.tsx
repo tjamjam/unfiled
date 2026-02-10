@@ -49,6 +49,7 @@ const tools = [
   },
   {
     name: 'PDF to Markdown',
+    badge: 'Beta',
     description: 'Extract headings, paragraphs, and lists as clean Markdown',
     icon: <FileText className="w-6 h-6" />,
     path: '/pdf-to-markdown',
@@ -118,6 +119,11 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
                 {tool.name}
+                {tool.badge && (
+                  <span className="ml-2 inline-block text-xs font-medium px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 align-middle">
+                    {tool.badge}
+                  </span>
+                )}
               </h3>
               <p className="text-sm text-gray-500 mt-1">{tool.description}</p>
             </Link>

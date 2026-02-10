@@ -13,6 +13,7 @@ Adobe Acrobat charges $20-30/month for basic operations like merging two PDFs. F
 - **Compress PDFs** — Reduce file size by removing unused objects
 - **Rotate Pages** — Rotate all pages 90, 180, or 270 degrees
 - **Images to PDF** — Convert JPG/PNG images into a PDF document
+- **PDF to Markdown** *(beta)* — Extract headings, paragraphs, and lists as clean Markdown. Uses tagged PDF structure trees when available, falls back to font-size heuristics
 
 All processing happens in your browser using WebAssembly and JavaScript. Zero server-side processing.
 
