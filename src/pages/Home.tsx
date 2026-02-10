@@ -144,6 +144,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Footer jab */}
+      <div className="max-w-6xl mx-auto px-4 pt-4 pb-16 text-center">
+        <p className="text-sm text-gray-400">
+          🖕 Adobe Acrobat — $29.99/mo to merge two PDFs? No thanks.
+        </p>
+      </div>
     </div>
   );
 }
