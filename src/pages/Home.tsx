@@ -5,6 +5,7 @@ import {
   RotateCw,
   Minimize2,
   Image,
+  FileText,
   Shield,
   Lock,
   Zap,
@@ -45,6 +46,13 @@ const tools = [
     icon: <Image className="w-6 h-6" />,
     path: '/images-to-pdf',
     color: 'bg-pink-100 text-pink-600',
+  },
+  {
+    name: 'PDF to Markdown',
+    description: 'Extract headings, paragraphs, and lists as clean Markdown',
+    icon: <FileText className="w-6 h-6" />,
+    path: '/pdf-to-markdown',
+    color: 'bg-teal-100 text-teal-600',
   },
 ];
 
