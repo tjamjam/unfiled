@@ -12,30 +12,35 @@ import NetworkMonitor from '../components/NetworkMonitor';
 const tools = [
   {
     name: 'Merge',
+    description: 'Combine multiple PDFs into one',
     icon: <Merge className="w-5 h-5" />,
     path: '/merge',
     color: 'bg-blue-100 text-blue-600',
   },
   {
     name: 'Split',
+    description: 'Extract or separate pages',
     icon: <Scissors className="w-5 h-5" />,
     path: '/split',
     color: 'bg-purple-100 text-purple-600',
   },
   {
     name: 'Compress',
+    description: 'Reduce file size',
     icon: <Minimize2 className="w-5 h-5" />,
     path: '/compress',
     color: 'bg-green-100 text-green-600',
   },
   {
     name: 'Rotate',
+    description: 'Rotate individual or all pages',
     icon: <RotateCw className="w-5 h-5" />,
     path: '/rotate',
     color: 'bg-orange-100 text-orange-600',
   },
   {
     name: 'Images to PDF',
+    description: 'Convert JPG or PNG to PDF',
     icon: <Image className="w-5 h-5" />,
     path: '/images-to-pdf',
     color: 'bg-pink-100 text-pink-600',
@@ -43,6 +48,7 @@ const tools = [
   {
     name: 'PDF to Markdown',
     badge: 'Beta',
+    description: 'Extract text as clean Markdown',
     icon: <FileText className="w-5 h-5" />,
     path: '/pdf-to-markdown',
     color: 'bg-teal-100 text-teal-600',
@@ -91,6 +97,7 @@ export default function Home() {
                   </span>
                 )}
               </p>
+              <p className="text-xs text-gray-500 mt-1">{tool.description}</p>
             </Link>
           ))}
         </div>
