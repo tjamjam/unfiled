@@ -55,9 +55,14 @@ export default function Home() {
       {/* Hero */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-4">
-            Unfiled
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">U</span>
+            </div>
+            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900">
+              Unfiled
+            </h1>
+          </div>
           <p className="text-lg text-gray-500">
             No upload. No account. PDF tools that run entirely in your browser.
           </p>
