@@ -10,6 +10,7 @@ import {
   Lock,
   Zap,
 } from 'lucide-react';
+import NetworkMonitor from '../components/NetworkMonitor';
 
 const tools = [
   {
@@ -131,22 +132,20 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Privacy Section */}
+      {/* Privacy proof */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 sm:p-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Why Unfiled?
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {privacyFeatures.map((feature) => (
-              <div key={feature.title} className="text-center">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 text-indigo-600 shadow-sm">
-                  {feature.icon}
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+          <div className="max-w-2xl mx-auto text-center mb-4">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              Zero network requests
+            </h2>
+            <p className="text-gray-600">
+              Your files never leave this device. Verify it below, or turn off your Wi-Fi — everything still works.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <NetworkMonitor />
           </div>
         </div>
       </div>
