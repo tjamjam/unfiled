@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Upload } from 'lucide-react';
+import { FileDown } from 'lucide-react';
 
 interface FileDropzoneProps {
   onFilesSelected: (files: File[]) => void;
@@ -46,7 +46,7 @@ export default function FileDropzone({
       `}
     >
       <input {...getInputProps()} />
-      <Upload
+      <FileDown
         className={`w-10 h-10 mx-auto mb-3 ${
           isDragActive ? 'text-indigo-500' : 'text-gray-400'
         }`}
