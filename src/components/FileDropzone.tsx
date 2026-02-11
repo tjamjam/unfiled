@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { FileDown } from 'lucide-react';
+import { FileDown, type LucideIcon } from 'lucide-react';
 
 interface FileDropzoneProps {
   onFilesSelected: (files: File[]) => void;
@@ -8,6 +8,7 @@ interface FileDropzoneProps {
   multiple?: boolean;
   label?: string;
   description?: string;
+  icon?: LucideIcon;
 }
 
 export default function FileDropzone({
@@ -16,6 +17,7 @@ export default function FileDropzone({
   multiple = true,
   label = 'Drop PDF files here',
   description = 'or click to browse',
+  icon: Icon = FileDown,
 }: FileDropzoneProps) {
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -46,7 +48,7 @@ export default function FileDropzone({
       `}
     >
       <input {...getInputProps()} />
-      <FileDown
+      <Icon
         className={`w-10 h-10 mx-auto mb-3 ${
           isDragActive ? 'text-indigo-500' : 'text-gray-400'
         }`}

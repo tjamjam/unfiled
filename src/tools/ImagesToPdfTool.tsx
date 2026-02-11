@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Image, Download, X } from 'lucide-react';
+import { Image, ImageDown, Download, X } from 'lucide-react';
 import ToolHeader from '../components/ToolHeader';
 import FileDropzone from '../components/FileDropzone';
 import ProcessingButton from '../components/ProcessingButton';
@@ -57,6 +57,7 @@ export default function ImagesToPdfTool() {
         accept={{ 'image/png': ['.png'], 'image/jpeg': ['.jpg', '.jpeg'] }}
         label="Drop images here"
         description="JPG and PNG supported. Each image becomes one page."
+        icon={ImageDown}
       />
 
       {files.length > 0 && (
