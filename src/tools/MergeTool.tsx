@@ -54,7 +54,7 @@ export default function MergeTool() {
         description="Add 2 or more PDFs, then merge them in order"
       />
 
-      <FileList files={files} onRemove={handleRemove} />
+      <FileList files={files} onRemove={handleRemove} onReorder={(reordered) => { setFiles(reordered); setResult(null); }} />
 
       {files.length > 0 && (
         <div className="mt-4">
