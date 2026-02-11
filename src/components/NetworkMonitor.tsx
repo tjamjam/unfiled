@@ -42,7 +42,10 @@ export default function NetworkMonitor() {
   }
 
   return (
-    <div className="mt-8">
+    <div
+      className="mt-8 transition-[filter] duration-700 ease-in-out"
+      style={isOnline ? { filter: 'invert(1) hue-rotate(180deg)' } : undefined}
+    >
       {/* Terminal window */}
       <div className="bg-gray-950 border border-gray-800 rounded-xl overflow-hidden font-mono text-sm">
         {/* Title bar */}
