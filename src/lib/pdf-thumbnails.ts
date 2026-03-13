@@ -44,3 +44,36 @@ export async function generateSingleThumbnail(
   await page.render({ canvasContext: ctx, viewport, canvas } as any).promise;
   return canvas.toDataURL('image/png');
 }
+
+export async function renderPageAsBlob(
+  file: File,
+  pageNum: number,
+  format: 'image/png' | 'image/jpeg',
+  scale: number = 2
+): Promise<Blob> {
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+  const page = await pdf.getPage(pageNum);
+  const viewport = page.getViewport({ scale });
+  const canvas = document.createElement('canvas');
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+  const ctx = canvas.getContext('2d')!;
+  await page.render({ canvasContext: ctx, viewport, canvas } as any).promise;
+  return new Promise<Blob>((resolve, reject) => {
+    canvas.toBlob(
+      (blob) => {
+        if (blob) resolve(blob);
+        else reject(new Error('Failed to create blob from canvas'));
+      },
+      format,
+      format === 'image/jpeg' ? 0.92 : undefined
+    );
+  });
+}
+
+export async function getPageCount(file: File): Promise<number> {
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+  return pdf.numPages;
+}

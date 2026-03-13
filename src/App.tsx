@@ -7,6 +7,7 @@ import CompressTool from './tools/CompressTool';
 import RotateTool from './tools/RotateTool';
 import ImagesToPdfTool from './tools/ImagesToPdfTool';
 import PdfToMarkdownTool from './tools/PdfToMarkdownTool';
+import PdfToImagesTool from './tools/PdfToImagesTool';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/compress" element={<CompressTool />} />
           <Route path="/rotate" element={<RotateTool />} />
           <Route path="/images-to-pdf" element={<ImagesToPdfTool />} />
+          <Route path="/pdf-to-images" element={<PdfToImagesTool />} />
           <Route path="/pdf-to-markdown" element={<PdfToMarkdownTool />} />
         </Route>
       </Routes>

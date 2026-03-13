@@ -5,6 +5,7 @@ import {
   RotateCw,
   Minimize2,
   Image,
+  FileImage,
   FileText,
 } from 'lucide-react';
 import NetworkMonitor from '../components/NetworkMonitor';
@@ -44,6 +45,13 @@ const tools = [
     icon: <Image className="w-5 h-5" />,
     path: '/images-to-pdf',
     color: 'bg-pink-100 text-pink-600',
+  },
+  {
+    name: 'PDF to Images',
+    description: 'Convert pages to JPG or PNG',
+    icon: <FileImage className="w-5 h-5" />,
+    path: '/pdf-to-images',
+    color: 'bg-cyan-100 text-cyan-600',
   },
   {
     name: 'PDF to Markdown',
